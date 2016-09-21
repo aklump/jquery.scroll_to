@@ -39,7 +39,7 @@
     self.$el = $(el);
 
     if (windowLoaded) {
-      self.move();
+      self.go();
     }
     else {
       // This will detect if we have any images in our targets and delay the
@@ -50,13 +50,13 @@
         self.$el.hide();
         $(window).load(function () {
           self.$el.show();
-          self.move();
+          self.go();
         });
       }
     }
   }
 
-  ScrollTo.prototype.move = function () {
+  ScrollTo.prototype.go = function () {
     var destination = this.$el.offset().top + this.$target.scrollTop() - this.options.offset;
 
     if (this.options.speed > 0) {

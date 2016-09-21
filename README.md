@@ -17,4 +17,4 @@ Scrolls the body of the page to the element found by `.comments` using the defau
       easing: 'swing'
     })
 
-This example will scroll the target `.modal` which contains `.modal-footer` so that `.modal-footer` is at the top of the page.  Nothing is done to the body element.
+This example will scroll the target `.modal` to  `.modal-footer` so that `.modal-footer` is at the top of the page.  Nothing is done to the body element.  Not tested when the element is not a child of the target, but may still work.
