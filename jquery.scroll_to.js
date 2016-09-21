@@ -1,16 +1,14 @@
 /**
- * {{ name }} jQuery JavaScript Plugin v{{ version }}
- * {{ homepage }}
+ * Scroll To jQuery JavaScript Plugin v0.1
+ * http://www.intheloftstudios.com/packages/js/jquery.scroll_to
  *
- * {{ description }}.
+ * Quick plugin for scrolling to an element with animation.  Supports modals and non-body elements.
  *
- * Copyright 2013, Aaron Klump
- * @license Dual licensed under the MIT or GPL Version 2 licenses.
+ * Copyright 2016, Aaron Klump <sourcecode@intheloftstudios.com>
+ * Dual licensed under the MIT or GPL Version 2 licenses.
  *
- * Date: {{ date }}
- */
-
-/**
+ * Date: Tue Sep 20 18:03:06 PDT 2016
+ *
  * The following example will scroll the body to the .comments section.
  * @code
  *   $('.comments').scrollTo();
@@ -25,7 +23,7 @@
  *
  * Refer to the defaults section of options.
  */
-
+/* @preserve http://www.intheloftstudios.com/packages/js/jquery.scroll_to */
 ;(function ($, window) {
   "use strict";
 
@@ -59,8 +57,7 @@
   }
 
   ScrollTo.prototype.move = function () {
-    var destination = this.$el.offset().top;
-    destination += this.$target.scrollTop();
+    var destination = this.$el.offset().top + this.$target.scrollTop() - this.options.offset;
 
     if (this.options.speed > 0) {
       this.$target.not(':animated').animate({
@@ -74,7 +71,7 @@
 
   $.fn.scrollTo = function (options) {
     return this.each(function () {
-      new ScrollTo(this, options);
+      return new ScrollTo(this, options);
     });
   };
 
@@ -93,7 +90,13 @@
      * For no animation, set speed to 0.
      */
     "speed" : null,
-    "easing": null
+    "easing": null,
+
+    /**
+     * An offset will be added to the detected position.  Use this to fine adjust the destination. Negative numbers
+     * move content further up.
+     */
+    "offset": 0
   };
 
   /**
@@ -102,7 +105,8 @@
    * @return {string}
    */
   $.fn.scrollTo.version = function () {
-    return '0.0.1';
+    return '0.1';
   };
 
 })(jQuery, window);
+
