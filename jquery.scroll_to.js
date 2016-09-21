@@ -1,5 +1,5 @@
 /**
- * Scroll To jQuery JavaScript Plugin v0.1.1
+ * Scroll To jQuery JavaScript Plugin v0.1.2
  * http://www.intheloftstudios.com/packages/js/jquery.scroll_to
  *
  * Quick plugin for scrolling to an element with animation.  Supports modals and non-body elements.
@@ -7,7 +7,7 @@
  * Copyright 2016, Aaron Klump <sourcecode@intheloftstudios.com>
  * Dual licensed under the MIT or GPL Version 2 licenses.
  *
- * Date: Tue Sep 20 18:03:45 PDT 2016
+ * Date: Tue Sep 20 18:18:36 PDT 2016
  *
  * The following example will scroll the body to the .comments section.
  * @code
@@ -105,7 +105,7 @@
    * @return {string}
    */
   $.fn.scrollTo.version = function () {
-    return '0.1.1';
+    return '0.1.2';
   };
 
 })(jQuery, window);
