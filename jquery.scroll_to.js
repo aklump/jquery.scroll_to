@@ -29,26 +29,32 @@
 ;(function ($, window) {
   "use strict";
 
-// The actual plugin constructor
+  var windowLoaded = false;
+  $(window).load(function () {
+    windowLoaded = true;
+  });
+
   function ScrollTo(el, options) {
     var self = this;
-    self.$el = $(el);
     self.options = $.extend({}, $.fn.scrollTo.defaults, options);
     self.$target = $(self.options.target);
+    self.$el = $(el);
 
-    // This will detect if we have any images in our targets and delay the
-    // initialization until after the images load.
-    var hasImages = self.$el.is('img') || self.$el.find('img').length;
-    if (hasImages) {
-      // This prevents flashing content while images load.
-      self.$el.hide();
-      $(window).load(function () {
-        self.$el.show();
-        self.move();
-      });
+    if (windowLoaded) {
+      self.move();
     }
     else {
-      self.move();
+      // This will detect if we have any images in our targets and delay the
+      // initialization until after the images load.
+      var hasImages = self.$el.is('img') || self.$el.find('img').length;
+      if (!windowLoaded && hasImages) {
+        // This prevents flashing content while images load.
+        self.$el.hide();
+        $(window).load(function () {
+          self.$el.show();
+          self.move();
+        });
+      }
     }
   }
 

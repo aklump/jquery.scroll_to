@@ -1,7 +1,7 @@
 # ScrollTo
 ## A jQuery Plugin
 
-**Animates the vertical scrolling to an element in the DOM.  More importantly, makes it very simple to do so with dead-simple syntax.  And very small at 918 bytes minified.**
+**Animates the vertical scrolling to an element in the DOM.  More importantly, makes it easy to do so with dead-simple syntax.  And very small at <1K minified.  Will wait for images to load before scrolling for accurate location.**
 
 ## Example One
 
