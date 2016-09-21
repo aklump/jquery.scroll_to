@@ -1,0 +1,5 @@
+name = "Scroll To"
+description = "Quick plugin for scrolling to an element"
+version = "0.1"
+author = "Aaron Klump <sourcecode@intheloftstudios.com>"
+homepage = "http://www.intheloftstudios.com/packages/js/scroll_to"
