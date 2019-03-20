@@ -8,4 +8,4 @@
 test -e "$7/jquery.scroll_to.min.js" && rm "$7/jquery.scroll_to.min.js"
 
 # Remove the dist folder
-test -e "$7/dist" && rm -rf "$7/dist"
+wp_rm dist
