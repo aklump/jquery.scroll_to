@@ -6,5 +6,5 @@ push_tags = auto
 push_master = auto
 push_develop = auto
 patch_prefix = .
-git_root = /Volumes/Data/Users/aklump/Code/Packages/jquery/scroll_to
+git_root = .
 info_file = web_package.info
